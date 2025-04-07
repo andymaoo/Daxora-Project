@@ -67,36 +67,36 @@ A modern full-stack web application built with Next.js 13, featuring a stylish l
 ## Project Structure
 
 daxora-dashboard/
-├─ app/
-│  ├─ api/
-│  │  └─ auth/
-│  │     ├─ login/
-│  │     │  └─ route.js         # API endpoint for login (uses Prisma)
-│  │     ├─ signup/
-│  │     │  └─ route.js         # API endpoint for signup (uses Prisma)
-│  │     └─ subscriptions/
-│  │        └─ route.js         # API endpoint returning active subscriptions
-│  ├─ auth/
-│  │  ├─ login/
-│  │  │  └─ page.js            # Login page with form and API integration
-│  │  └─ signup/
-│  │     └─ page.js            # Signup page for creating new accounts
-│  ├─ dashboard/
-│  │  └─ page.js               # Dashboard page for logged-in users
-│  ├─ globals.css              # Global CSS with Tailwind directives and custom styles
-│  ├─ layout.js                # Global layout with metadata and font integration
-│  └─ page.js                  # Root page (can redirect to /auth/login)
-├─ lib/
-│  └─ prisma.js                # Prisma client instance for database operations
-├─ prisma/
-│  └─ schema.prisma            # Prisma schema defining the database models
-├─ public/                     # (Optional) Static assets like images, fonts, etc.
-│  └─ assets/
-├─ .env                       # Environment file with DATABASE_URL for SQLite
-├─ package.json
-├─ tailwind.config.js
-├─ postcss.config.js
-└─ README.md
+├── app/
+│   ├── api/
+│   │   └── auth/
+│   │       ├── login/
+│   │       │   └── route.js          # API endpoint for login (uses Prisma)
+│   │       ├── signup/
+│   │       │   └── route.js          # API endpoint for signup (uses Prisma)
+│   │       └── subscriptions/
+│   │           └── route.js          # API endpoint returning active subscriptions
+│   ├── auth/
+│   │   ├── login/
+│   │   │   └── page.js               # Login page with form and API integration
+│   │   └── signup/
+│   │       └── page.js               # Signup page for creating new accounts
+│   ├── dashboard/
+│   │   └── page.js                   # Dashboard page for logged-in users
+│   ├── globals.css                   # Global CSS with Tailwind directives and custom styles
+│   ├── layout.js                     # Global layout with metadata and font integration
+│   └── page.js                       # Root page (can redirect to /auth/login)
+├── lib/
+│   └── prisma.js                     # Prisma client instance for database operations
+├── prisma/
+│   └── schema.prisma                 # Prisma schema defining the database models
+├── public/                           # (Optional) Static assets like images, fonts, etc.
+├── .env                              # Environment file with DATABASE_URL for SQLite
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
+
 
 ## Pages
 
