@@ -1,19 +1,18 @@
+// app/api/login/route.js
 import { NextResponse } from "next/server";
-
-// Mock "database" of users
-const users = [
-  { email: "user1@example.com", password: "password1", name: "Alice" },
-  { email: "user2@example.com", password: "password2", name: "Bob" }
-];
+import prisma from "@/lib/prisma";
 
 export async function POST(request) {
   const { email, password } = await request.json();
-  const user = users.find(u => u.email === email && u.password === password);
-  
-  if (!user) {
+
+  // Look for user in database
+  const user = await prisma.user.findUnique({
+    where: { email },
+  });
+
+  if (!user || user.password !== password) {
     return NextResponse.json({ message: "Invalid credentials" }, { status: 401 });
   }
-  
-  // In a real app, you would return a token or session details.
+
   return NextResponse.json({ user });
 }

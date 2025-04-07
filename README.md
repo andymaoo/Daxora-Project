@@ -14,11 +14,117 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Daxora Dashboard
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+A modern full-stack web application built with Next.js 13, featuring a stylish login, account creation (signup), and a personalized dashboard. The application uses Prisma with SQLite for persistent data storage, Tailwind CSS for an attractive, responsive UI, and Next.js's App Router for a streamlined routing experience.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Overview
+
+**Daxora Dashboard** offers:
+- **User Authentication:** Secure login and account creation (signup) pages.
+- **User Dashboard:** Displays user details and active subscriptions.
+- **Persistent Storage:** Integration with an external SQLite database using Prisma.
+- **Modern UI/UX:** Responsive design with Tailwind CSS, gradient backgrounds, smooth transitions, and creative styling.
+- **API Endpoints:** Custom API routes for login, signup, and fetching subscriptions.
+
+## Features
+
+- **Login & Signup:**  
+  - **Login Page:** Users log in with their email and password.  
+  - **Signup Page:** New users can create an account by providing their name, email, and password.
+  - Both pages are integrated with API endpoints that validate and store user data in a SQLite database via Prisma.
+
+- **User Dashboard:**  
+  - Displays the logged-in user’s name and email.  
+  - Shows a list of active subscriptions fetched from an API endpoint.
+  - Includes a logout function that clears user data and redirects back to the login page.
+
+- **API Endpoints:**  
+  - **POST `/api/login`:** Validates login credentials against the SQLite database.
+  - **POST `/api/signup`:** Creates a new user account in the SQLite database.
+  - **GET `/api/subscriptions`:** Returns a list of active subscriptions (mock data).
+
+## Technologies
+
+- **Next.js 13 App Router:**  
+  Provides folder-based routing, server/client components, and modern data fetching.
+  
+- **React 18:**  
+  For building interactive user interfaces.
+  
+- **Tailwind CSS:**  
+  Utility-first CSS framework for rapid, responsive UI development.
+  
+- **Prisma:**  
+  Next-generation ORM used for interacting with an SQLite database.
+  
+- **SQLite:**  
+  Lightweight file-based database for local persistence.
+  
+- **Vercel:**  
+  Recommended hosting platform for seamless deployment of Next.js applications.
+
+## Project Structure
+
+daxora-dashboard/
+├─ app/
+│  ├─ api/
+│  │  └─ auth/
+│  │     ├─ login/
+│  │     │  └─ route.js         # API endpoint for login (uses Prisma)
+│  │     ├─ signup/
+│  │     │  └─ route.js         # API endpoint for signup (uses Prisma)
+│  │     └─ subscriptions/
+│  │        └─ route.js         # API endpoint returning active subscriptions
+│  ├─ auth/
+│  │  ├─ login/
+│  │  │  └─ page.js            # Login page with form and API integration
+│  │  └─ signup/
+│  │     └─ page.js            # Signup page for creating new accounts
+│  ├─ dashboard/
+│  │  └─ page.js               # Dashboard page for logged-in users
+│  ├─ globals.css              # Global CSS with Tailwind directives and custom styles
+│  ├─ layout.js                # Global layout with metadata and font integration
+│  └─ page.js                  # Root page (can redirect to /auth/login)
+├─ lib/
+│  └─ prisma.js                # Prisma client instance for database operations
+├─ prisma/
+│  └─ schema.prisma            # Prisma schema defining the database models
+├─ public/                     # (Optional) Static assets like images, fonts, etc.
+│  └─ assets/
+├─ .env                       # Environment file with DATABASE_URL for SQLite
+├─ package.json
+├─ tailwind.config.js
+├─ postcss.config.js
+└─ README.md
+
+## Pages
+
+**Login Page (/login)**
+Displays a login form.
+
+Submits credentials to /api/login.
+
+Redirects authenticated users to /dashboard.
+
+Contains a link to the signup page.
+
+**Signup Page (/signup)**
+Presents a signup form for account creation.
+
+Submits user data to /api/signup.
+
+On successful signup, logs the user in and redirects to /dashboard.
+
+**Dashboard Page (/dashboard)**
+Shows user details (name and email).
+
+Fetches and displays active subscriptions.
+
+Provides a logout option that clears user data and redirects to /login.
+
+**Root Page (/)**
+Can be configured to redirect to /login.
 
 ## Learn More
 
