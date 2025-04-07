@@ -8,7 +8,7 @@ const inter = Inter({
 
 export const metadata = {
   title: "Daxora Dashboard",
-  description: "A Next.js app built with the App Router",
+  description: "A Next.js app with a fancy login and dashboard",
 };
 
 export default function RootLayout({ children }) {
