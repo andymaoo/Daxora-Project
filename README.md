@@ -1,10 +1,13 @@
 # Daxora Dashboard
 
-Daxora Dashboard is a modern full-stack web application built with Next.js 13. It features a stylish login page, account creation (signup), and a personalized dashboard. The app uses Prisma with SQLite for persistent data storage, Tailwind CSS for an attractive and responsive UI, and Next.js's App Router for streamlined routing.
+This full-stack web application is built with Next.js 13. It features a login page, account creation (signup), and a dashboard. The app uses Prisma with SQLite for data storage, Tailwind CSS for the UI, and Next.js's App Router for routing.
+
+## My Example
+https://daxora1.vercel.app/login
 
 ## Overview
 
-Daxora Dashboard offers the following features:
+Features:
 - User Authentication: Secure login and signup pages that validate credentials and create new accounts.
 - User Dashboard: Displays user details (name and email) along with a list of active subscriptions.
 - Persistent Storage: Uses an external SQLite database via Prisma for storing user information.
@@ -15,14 +18,12 @@ Daxora Dashboard offers the following features:
 
 - **Next.js 13 (App Router)**: Provides folder-based routing and server/client component support.
 - **React 18**: For building dynamic and interactive user interfaces.
-- **Tailwind CSS**: A utility-first CSS framework for rapid, responsive UI development.
+- **Tailwind CSS**: CSS framework for responsive UI development.
 - **Prisma**: An ORM used to interact with an SQLite database.
-- **SQLite**: A lightweight, file-based database for local data persistence.
-- **Vercel**: Recommended hosting platform for deploying Next.js applications.
+- **SQLite**: File-based database for local data persistence.
+- **Vercel**: Hosting platform for deploying Next.js applications.
 
 ## Project Structure
-
-The project is organized as follows:
 
 - **app/**
   - **api/**
@@ -42,7 +43,7 @@ The project is organized as follows:
 - **.env**: Contains environment variables (such as the DATABASE_URL for SQLite).
 - **package.json, tailwind.config.js, postcss.config.js**: Project configuration files.
 
-## Setup Instructions (Plain Text)
+## Setup Instructions
 
 To set up and run the project locally, follow these steps:
 
@@ -111,5 +112,3 @@ To deploy the project on Vercel, do the following:
 ## License
 
 This project is open source under the MIT License.
-
-Happy coding and enjoy the Daxora Dashboard!
