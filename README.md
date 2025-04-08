@@ -2,9 +2,6 @@
 
 This full-stack web application is built with Next.js 13. It features a login page, account creation (signup), and a dashboard. The app uses Prisma with SQLite for data storage, Tailwind CSS for the UI, and Next.js's App Router for routing.
 
-## My Example
-finaldaxora.vercel.app
-
 ## Overview
 
 Features:
